@@ -2,6 +2,32 @@
 @import "tailwindcss";
 
 /* ================================
+   UTILITY CLASSES
+================================ */
+@utility inverted-shape {
+  clip-path: shape(
+    from 13.12% 0%,
+    hline to 86.5%,
+    arc to 91% 4.5% of 4.5% 4.5% cw small rotate 0deg,
+    vline to 7.5%,
+    arc to 95.5% 12% of 4.5% 4.5% ccw small rotate 0deg,
+    hline to 95.5%,
+    arc to 100% 16.5% of 4.5% 4.5% cw small rotate 0deg,
+    vline to 90.43%,
+    arc to 90.43% 100% of 9.57% 9.57% cw small rotate 0deg,
+    hline to 26%,
+    arc to 20% 94% of 6% 6% cw small rotate 0deg,
+    vline to 69%,
+    arc to 14% 63% of 6% 6% ccw small rotate 0deg,
+    hline to 6%,
+    arc to 0% 57% of 6% 6% cw small rotate 0deg,
+    vline to 13.12%,
+    arc to 13.12% 0% of 13.12% 13.12% cw small rotate 0deg,
+    close
+  );
+}
+
+/* ================================
    DESIGN TOKENS
 ================================ */
 

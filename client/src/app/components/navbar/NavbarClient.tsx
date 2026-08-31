@@ -91,7 +91,7 @@ export default function NavbarClient() {
   ];
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 w-full">
+    <header className="fixed inset-x-0 top-0 z-60 w-full ">
       <nav
         ref={navRef}
         className="
@@ -109,7 +109,7 @@ export default function NavbarClient() {
       >
         {/* Logo */}
         <Link href="/" className="font-sans text-xl font-bold tracking-tight">
-          RP<span className="text-accent">_.</span>
+          RP<span className="text-accent">._</span>
         </Link>
 
         {/* Navigation */}
