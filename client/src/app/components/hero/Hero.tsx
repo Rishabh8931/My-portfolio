@@ -2,6 +2,7 @@ import InvertedBox from "@/components/ui/InvertedBox";
 import HeroTexts from "@/components/ui/HeroTexts";
 import Button from "@/components/ui/Button";
 import FloatingButtons from "../ui/FloatingButtons";
+import SocialMediaLinks from "../ui/SocialMediaLinks";
 
 export default function Hero() {
   return (
@@ -20,7 +21,7 @@ export default function Hero() {
       {/* LEFT SIDE */}
       <div>
         <HeroTexts />
-
+        {/**CTA Buttons */}
         <div className="mt-4 flex gap-4">
           <Button href="/#work" variant="primary" arrow="right">
             Explore my work
@@ -29,6 +30,9 @@ export default function Hero() {
           <Button href="/#" variant="secondary" arrow="external">
             GitHub
           </Button>
+        </div>
+        <div className="mt-8">
+          <SocialMediaLinks />
         </div>
       </div>
 

@@ -10,76 +10,80 @@ import ThemeToggle from "./Themtoggle";
 export default function NavbarClient() {
   const navRef = useRef<HTMLElement>(null);
 
+  // initial state of navebar
+  const initialNavState = {
+    width: "100%",
+    maxWidth: "100%",
+    marginTop: "0px",
+    height: "80px",
+
+    borderTopWidth: "0px",
+    borderRightWidth: "0px",
+    borderBottomWidth: "1px",
+    borderLeftWidth: "0px",
+
+    borderStyle: "solid",
+    borderColor: "var(--border)",
+
+    borderRadius: "0px",
+
+    paddingLeft: "24px",
+    paddingRight: "24px",
+    paddingTop: "16px",
+    paddingBottom: "16px",
+
+    boxShadow: "none",
+  };
+
+  // triggers scroll animation for navbar
+  const handleScroll = (nav: HTMLElement) => {
+    const scrolled = window.scrollY > 12;
+
+    gsap.to(nav, {
+      width: "100%",
+      maxWidth: scrolled ? "64rem" : "100%",
+      marginTop: scrolled ? "16px" : "0px",
+
+      // Border
+      borderTopWidth: scrolled ? "1px" : "0px",
+      borderRightWidth: scrolled ? "1px" : "0px",
+      borderBottomWidth: "1px",
+      borderLeftWidth: scrolled ? "1px" : "0px",
+
+      height: scrolled ? "64px" : "80px",
+
+      borderStyle: "solid",
+      borderColor: "var(--border)",
+
+      borderRadius: scrolled ? "16px" : "0px",
+
+      paddingLeft: scrolled ? "20px" : "24px",
+      paddingRight: scrolled ? "20px" : "24px",
+      paddingTop: scrolled ? "12px" : "16px",
+      paddingBottom: scrolled ? "12px" : "16px",
+
+      boxShadow: scrolled ? "0 10px 30px rgba(0, 0, 0, 0.08)" : "none",
+
+      duration: 0.6,
+      ease: "power3.out",
+    });
+  };
+
   useEffect(() => {
     const nav = navRef.current;
 
     if (!nav) return;
 
     // Initial state
-    gsap.set(nav, {
-      width: "100%",
-      maxWidth: "100%",
-      marginTop: "0px",
-      height: "80px",
-
-      borderTopWidth: "0px",
-      borderRightWidth: "0px",
-      borderBottomWidth: "1px",
-      borderLeftWidth: "0px",
-
-      borderStyle: "solid",
-      borderColor: "var(--border)",
-
-      borderRadius: "0px",
-
-      paddingLeft: "24px",
-      paddingRight: "24px",
-      paddingTop: "16px",
-      paddingBottom: "16px",
-
-      boxShadow: "none",
-    });
-
-    const handleScroll = () => {
-      const scrolled = window.scrollY > 12;
-
-      gsap.to(nav, {
-        width: "100%",
-        maxWidth: scrolled ? "64rem" : "100%",
-        marginTop: scrolled ? "16px" : "0px",
-
-        // Border
-        borderTopWidth: scrolled ? "1px" : "0px",
-        borderRightWidth: scrolled ? "1px" : "0px",
-        borderBottomWidth: "1px",
-        borderLeftWidth: scrolled ? "1px" : "0px",
-
-        height: scrolled ? "64px" : "80px",
-
-        borderStyle: "solid",
-        borderColor: "var(--border)",
-
-        borderRadius: scrolled ? "16px" : "0px",
-
-        paddingLeft: scrolled ? "20px" : "24px",
-        paddingRight: scrolled ? "20px" : "24px",
-        paddingTop: scrolled ? "12px" : "16px",
-        paddingBottom: scrolled ? "12px" : "16px",
-
-        boxShadow: scrolled ? "0 10px 30px rgba(0, 0, 0, 0.08)" : "none",
-
-        duration: 0.6,
-        ease: "power3.out",
-      });
-    };
+    gsap.set(nav, initialNavState);
 
     // Initial scroll check
-    handleScroll();
+    handleScroll(nav);
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", () => handleScroll(nav));
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", () => handleScroll(nav));
     };
   }, []);
 
