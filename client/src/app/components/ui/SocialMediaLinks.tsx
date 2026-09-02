@@ -49,7 +49,7 @@ export default function SocialMediaLinks() {
               "
             >
               <Icon
-                size={20}
+                size={15}
                 strokeWidth={1.8}
                 className="
                   transition-all

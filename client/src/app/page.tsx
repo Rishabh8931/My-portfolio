@@ -3,6 +3,7 @@
 import SiteShell from "@/components/layout/SiteShell";
 import Navbar from "@/components/navbar/Navbar";
 import Hero from "@/components/hero/Hero";
+import Ticker from "./components/ticker/Ticker";
 
 export default function Home() {
   return (
@@ -10,10 +11,14 @@ export default function Home() {
       <Navbar />
       <main className="min-h-screen mt-20.5 ">
         <section
-          id="about"
+          id="hero"
           className="mx-auto min-h-screen max-w-7xl  items-center py-[1vw] "
         >
           <Hero />
+          {/** Ticker */}
+          <div className="mt-7">
+            <Ticker />
+          </div>
         </section>
 
         <section id="work" className="mx-auto min-h-screen max-w-7xl">

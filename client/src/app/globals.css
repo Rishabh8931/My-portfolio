@@ -203,3 +203,27 @@ img {
     clip-path: circle(var(--theme-radius) at var(--theme-x) var(--theme-y));
   }
 }
+
+/* ================================
+   animate ticker
+================================ */
+
+@theme {
+  --animate-ticker: ticker 30s linear infinite;
+
+  @keyframes ticker {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ticker {
+    animation-play-state: paused;
+  }
+}

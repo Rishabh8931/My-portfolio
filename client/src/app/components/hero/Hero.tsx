@@ -16,6 +16,7 @@ export default function Hero() {
         px-[1vw]
         py-0
         md:grid-cols-2
+        w-full
       "
     >
       {/* LEFT SIDE */}
@@ -31,7 +32,10 @@ export default function Hero() {
             GitHub
           </Button>
         </div>
-        <div className="mt-8">
+
+        {/** mini links */}
+
+        <div className="mt-2">
           <SocialMediaLinks />
         </div>
       </div>
