@@ -88,7 +88,7 @@ export default function NavbarClient() {
   }, []);
 
   const navLinks = [
-    { text: "About", href: "#about", label: "About" },
+    { text: "About", href: "#hero", label: "About" },
     { text: "Work", href: "#work", label: "Work" },
     { text: "Lab", href: "#lab", label: "Lab" },
     { text: "Contact", href: "#contact", label: "Contact" },
