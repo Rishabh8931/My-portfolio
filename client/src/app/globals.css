@@ -54,6 +54,8 @@
 
   /* Accent */
   --accent: #24c979;
+
+  --foreground: #111111;
 }
 
 /* ================================
@@ -67,6 +69,9 @@
   --text: #f2f2f2;
   --muted: #a5a5a5;
   --border: #eeeeee;
+
+  /* --background: #111111; */
+  --foreground: #f5f5f2;
 
   /* Dark Pastels */
   --pink: #3a2826;
@@ -108,6 +113,7 @@ html {
 
 body {
   margin: 0;
+  cursor: none;
 
   font-family: var(--font-main);
   color: var(--text);
@@ -116,6 +122,23 @@ body {
   transition:
     background-color 0.25s ease,
     color 0.25s ease;
+}
+
+@media (pointer: fine) {
+  html,
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    cursor: none;
+  }
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--background);
 }
 
 button,
@@ -136,11 +159,6 @@ a {
 img {
   max-width: 100%;
   display: block;
-}
-
-::selection {
-  background: var(--text);
-  color: var(--background);
 }
 
 /* ================================

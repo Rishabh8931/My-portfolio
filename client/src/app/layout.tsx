@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ThemeProvider from "./Provider";
+import CustomCursor from "@/components/customCursor/CustomCursor";
 
 import "./globals.css";
 
@@ -18,7 +19,10 @@ export default async function RootLayout({
     <html lang="en">
       <head></head>
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <CustomCursor />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
